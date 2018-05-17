@@ -1,0 +1,286 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  color: #ff4554;
+  font: 18px/24px Helvetica, Arial, Sans-Serif;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s
+}
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Tequilla Sunrise';
+  src: url('../fonts/Tequilla Sunrise.ttf');
+}
+
+/* header */
+.site-title {
+  margin: 60px 0 40px;
+  color: #FF4545;
+  text-align: center;
+  letter-spacing: 8px;
+  font: 100px/150px 'Tequilla Sunrise', Helvetica, Arial, Sans-Serif;
+}
+
+.tag-line {
+  margin: 20px;
+  color: #3c5aa6;
+  text-align: center;
+  font: italic bold 40px/40px Helvetica, Arial, Sans-Serif;
+}
+
+/* game board and cards */
+.board {
+  display: flex;
+  margin: auto;
+  max-width: 1110px;
+  flex-wrap: wrap;
+}
+
+.easy,
+.medium {
+  width: 740px;
+}
+
+.hard {
+  max-width: 1110px;
+}
+
+.card {
+  position: relative;
+  float: left;
+  margin: 5px;
+  width: 175px;
+  height: 175px;
+  text-align: center;
+}
+
+.card-back,
+.card-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  border: 10px solid #BB2A2A;
+  border-radius: 10px;
+  background-color: #C2C6C7;
+}
+
+.card-back {
+  border: 10px solid #BB2A2A;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  transform: rotateY(-180deg);
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  margin: auto;
+  padding: 5%;
+  width: 100%;
+}
+
+/* click effect */
+.card.flipped .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0);
+}
+button:focus {
+  background: #A3B164;
+  text-decoration: none;
+  outline: 0;
+}
+
+.level-button {
+  width: 150px;
+}
+
+.level-button._active {
+  background: #3971E9;
+}
+
+.choose-back img {
+  transform: scale(0.7);
+  transition: 0.2s;
+}
+
+.choose-back img._active {
+  transform: scale(1);
+  transition: 0.2s;
+}
+
+#start-game, 
+#restart, 
+.level-button {
+  cursor: pointer;
+}
+
+/* footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.counter,
+.timer,
+.rating {
+  width: 33%;
+  text-align: center;
+}
+
+.info {
+  color: #3c5aa6;
+  letter-spacing: 5px;
+  font: 32px/1.25 'Tequilla Sunrise', Helvetica, Arial, Sans-Serif;
+}
+
+.data {
+  color: #3c5aa6;
+  letter-spacing: normal;
+  font: 700 32px/1.25 Helvetica, Arial, Sans-Serif;
+}
+
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-data {
+  display: block;
+  margin: auto;
+}
+
+/* modal close Button */
+.close {
+  color: #aaa;
+  font: bold 24px/24px Helvetica, Arial, Sans-Serif;
+  width: 100%;
+  text-align: right;
+}
+
+.close:focus,
+.close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-data {
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+
+.play-again {
+  width: 100%;
+}
+
+.congrats {
+  font: 40px/60px 'Tequilla Sunrise', Helvetica, Arial, Sans-Serif;
+  color: #FF4545;
+  margin: 10px;
+  text-align: center;
+  letter-spacing: 6px;
+  width: 100%;
+}
+
+.win-text {
+  color: #3c5aa6;
+  font: 18px/24px 'Tequilla Sunrise', Helvetica, Arial, Sans-Serif;
+  text-align: center;
+}
+
+button {
+  background: #ff4554;
+  border-radius: 10px;
+  color: #fff;
+  display: block;
+  font: bold 24px/24px Helvetica, Arial, Sans-Serif;
+  margin: auto;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.choose-back {
+  margin: auto;
+}
+
+button:hover {
+  background: #e60012;
+  text-decoration: none;
+  outline: 0;
+}
+
+
+.site-title.start {
+  margin: 0 0 20px;
+}
+
+.choose {
+  font: 30px/30px 'Tequilla Sunrise', Helvetica, Arial, Sans-Serif;
+  border-top: solid #e60012;
+  padding-top: 20px;
+  margin: 10px 0 40px;
+  text-align: center;
+  letter-spacing: 6px;
+  width: 100%;
+}
+
+.start {
+  flex-basis: 100%;
+}

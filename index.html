@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Match Match Game">
+    <title>Match Match Game</title>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <h1 class="site-title">Match Match Game</h1>
+    </header>
+    <section id="game-board" class="board">
+    </section>
+    <footer>
+      <article class="timer">
+        <h3 class="info">Time:&nbsp;<span class="clock data"></span></h3>
+      </article>
+      <article class="counter">
+        <h3 class="info">Moves: <span id="moves" class="data"></span></h3>
+      </article>
+    </footer>
+
+      <!-- Start Modal -->
+      <div id="startModal" class="modal">
+        <div class="modal-content" onclick="((e) => { e.stopPropagation(); })(event)">
+          <div class="close" id="close-start">&times;</div>
+          <h2 class="site-title start">Match them!</h2>
+          <h3 class="choose start">Choose complexity</h3>
+            <button id="easy" class="level-button">Easy</button>
+            <button id="medium" class="level-button">Medium</button>
+            <button id="hard" class="level-button">Hard</button>
+          <h3 class="choose start">Choose card cover</h3>
+            <a href="#"  class="choose-back"><img id="pokeball" class="back" src="images/pokeball.png" alt=""></a>
+            <a href="#"  class="choose-back" ><img id="birds" class="back" src="images/birds.png" alt=""></a>
+          <h3 class="choose start" id="start-game">Start</h3>
+        </div>
+      </div>
+
+      <!-- Win Message -->
+      <div id="winModal" class="modal">
+        <div class="modal-content" onclick="((e) => { e.stopPropagation(); })(event)">
+          <div class="close" id="close-win">&times;</div>
+          <h2 class="congrats">Congrats! You won!</h2>
+          <article class="play-again">
+            <p class="win-text">Do you want to play again?</p>
+            <button id="restart">Restart Game</button>
+          </article>
+        </div>
+
+      </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+
+</html>
